@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="my_cloud" path="pepedu/resource/"/>
+    <files-path name="my_camera" path="."/>
+    <external-path name="camera" path="" />
+    <external-path name="update_apk" path="" />
+</paths>
+</resources>
