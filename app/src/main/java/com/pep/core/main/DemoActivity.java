@@ -359,8 +359,14 @@ public class DemoActivity extends EasyBaseActivity implements DemoContract.View 
 
     @Override
     public void layoutLoading() {
-        pepLoading.setLoadingType(EasyLoadingView.PEP_LOADING_LOAD);
-        new Handler().postDelayed(() -> pepLoading.setLoadingType(EasyLoadingView.PEP_LOADING_FINISH), 5000);
+        pepLoading.setOnErrorListener(new EasyLoadingView.OnLoadingErrorListener() {
+            @Override
+            public void onClick() {
+                pepLoading.setLoadingType(EasyLoadingView.EASY_LOADING_FINISH);
+            }
+        });
+        pepLoading.setLoadingType(EasyLoadingView.EASY_LOADING_LOAD);
+        new Handler().postDelayed(() -> pepLoading.setLoadingType(EasyLoadingView.EASY_LOADING_ERROR), 5000);
     }
 
     @Override

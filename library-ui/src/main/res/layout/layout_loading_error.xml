@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:background="@android:color/white"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,16 +16,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="啊偶!网络开小差了"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:gravity="center"
+            android:text="Oh my god, there is something wrong with the network. Please refresh it"
             android:textSize="16dp"/>
 
 
-        <Button
-            android:id="@+id/btn_restart"
-            android:layout_width="100dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="10dp"
-            android:text="点击重试"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_recover"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#FF4D90"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="The Refresh"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            app:cornerRadius="1000dp"
+            app:rippleColor="#ffffff" />
     </LinearLayout>
 
 </RelativeLayout>

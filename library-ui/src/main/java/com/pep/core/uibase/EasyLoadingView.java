@@ -14,9 +14,9 @@ import androidx.annotation.NonNull;
 
 public class EasyLoadingView extends RelativeLayout {
 
-    public static final int PEP_LOADING_LOAD = 1;
-    public static final int PEP_LOADING_ERROR = 2;
-    public static final int PEP_LOADING_FINISH = 3;
+    public static final int EASY_LOADING_LOAD   = 1;
+    public static final int EASY_LOADING_ERROR  = 2;
+    public static final int EASY_LOADING_FINISH = 3;
 
     private int currentLoading = -1;
 
@@ -62,7 +62,7 @@ public class EasyLoadingView extends RelativeLayout {
             layoutLoadingError.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    setLoadingType(PEP_LOADING_LOAD);
+                    setLoadingType(EASY_LOADING_LOAD);
                     if (onErrorListener != null) {
                         onErrorListener.onClick();
                     }
@@ -82,16 +82,16 @@ public class EasyLoadingView extends RelativeLayout {
 
 
         switch (loadingType) {
-            case PEP_LOADING_LOAD:
+            case EASY_LOADING_LOAD:
                 ObjectAnimator.ofFloat(layoutLoadingLoad, "alpha", 0f, 1f).setDuration(0).start();
                 layoutLoadingLoad.setVisibility(View.VISIBLE);
                 layoutLoadingError.setVisibility(View.INVISIBLE);
                 break;
-            case PEP_LOADING_ERROR:
+            case EASY_LOADING_ERROR:
                 layoutLoadingLoad.setVisibility(View.INVISIBLE);
                 layoutLoadingError.setVisibility(View.VISIBLE);
                 break;
-            case PEP_LOADING_FINISH:
+            case EASY_LOADING_FINISH:
                 new Handler(new Handler.Callback() {
                     @Override
                     public boolean handleMessage(@NonNull Message message) {
