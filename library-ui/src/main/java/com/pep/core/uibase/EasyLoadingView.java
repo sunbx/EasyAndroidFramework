@@ -85,22 +85,22 @@ public class EasyLoadingView extends RelativeLayout {
             case EASY_LOADING_LOAD:
                 ObjectAnimator.ofFloat(layoutLoadingLoad, "alpha", 0f, 1f).setDuration(0).start();
                 layoutLoadingLoad.setVisibility(View.VISIBLE);
-                layoutLoadingError.setVisibility(View.INVISIBLE);
+                layoutLoadingError.setVisibility(View.GONE);
                 break;
             case EASY_LOADING_ERROR:
-                layoutLoadingLoad.setVisibility(View.INVISIBLE);
+                layoutLoadingLoad.setVisibility(View.GONE);
                 layoutLoadingError.setVisibility(View.VISIBLE);
                 break;
             case EASY_LOADING_FINISH:
                 new Handler(new Handler.Callback() {
                     @Override
                     public boolean handleMessage(@NonNull Message message) {
-                        layoutLoadingLoad.setVisibility(View.INVISIBLE);
-                        layoutLoadingError.setVisibility(View.INVISIBLE);
-                        removeView(layoutLoadingError);
-                        removeView(layoutLoadingLoad);
-                        layoutLoadingLoad = null;
-                        layoutLoadingError = null;
+                        layoutLoadingLoad.setVisibility(View.GONE);
+                        layoutLoadingError.setVisibility(View.GONE);
+//                        removeView(layoutLoadingError);
+//                        removeView(layoutLoadingLoad);
+//                        layoutLoadingLoad = null;
+//                        layoutLoadingError = null;
                         return false;
                     }
 

@@ -23,11 +23,17 @@ public abstract class EasyBaseFragment extends Fragment implements View.OnClickL
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contentView = View.inflate(getActivity(), getLayoutId(), null);
         rootView = (LinearLayout) findViewById(R.id.rootView);
+
+
+        return contentView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         initView();
         initData();
         initListener();
-
-        return contentView;
     }
 
     public void addContentView(View contentView) {
